@@ -1,4 +1,6 @@
-package src;
+package src.conjuntos;
+
+import src.entidades.EspacoPorto;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -50,5 +52,13 @@ public class ConjuntoPortos {
         return portos;
     }
 
+    public EspacoPorto pesquisaPorID(int ID) {
+        for (EspacoPorto EP : portos) {
+            if (EP.getNumero() == ID) {
+                return EP;
+            }
+        }
+     return null;
+    }
 
 }

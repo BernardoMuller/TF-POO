@@ -1,4 +1,9 @@
-package src;
+package src.conjuntos;
+
+import src.entidades.EspacoPorto;
+import src.entidades.Transporte;
+import src.subclasses.TransporteMaterial;
+import src.subclasses.TransportePessoas;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,7 @@
-package src;
+package src.subclasses;
+
+import src.entidades.EspacoPorto;
+import src.entidades.Espaconave;
 
 public class Subluz extends Espaconave {
 

@@ -1,6 +1,9 @@
-package src;
+package src.subclasses;
 
-public class FTL extends Espaconave{
+import src.entidades.EspacoPorto;
+import src.entidades.Espaconave;
+
+public class FTL extends Espaconave {
 
     private int tipo;
 
@@ -10,9 +13,10 @@ public class FTL extends Espaconave{
 
     private int cargaMax;
 
-    public FTL(int tipo, String nome, double velocidadeMax, int cargaMax) {
+    public FTL(int tipo, String nome, EspacoPorto ep, double velocidadeMax, int cargaMax) {
         super(nome);
         this.tipo = tipo;
+        this.localAtual = ep;
         this.velocidadeMax = velocidadeMax;
         this.cargaMax = cargaMax;
     }
