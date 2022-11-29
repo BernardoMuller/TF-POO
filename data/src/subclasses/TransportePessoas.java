@@ -41,9 +41,9 @@ public class TransportePessoas extends Transporte {
 
     @Override
     public double calculaDistancia() {
-        double x= Math.pow((destino.getCoordX() - origem.getCoordX()),2);
-        double y= Math.pow((destino.getCoordY() - origem.getCoordY()),2);
-        double z= Math.pow((destino.getCoordZ()-origem.getCoordZ()),2);
+        double x= Math.pow((origem.getCoordX() - destino.getCoordX()),2);
+        double y= Math.pow((origem.getCoordY() - destino.getCoordY()),2);
+        double z= Math.pow((origem.getCoordZ()-destino.getCoordZ()),2);
         distancia = Math.sqrt(x+y+z);
         return distancia;
     }
