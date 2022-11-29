@@ -72,4 +72,16 @@ public class TransportePessoas extends Transporte {
         custo = pessoas * pDistanciaa;
         return custo;
     }
+
+    @Override
+    public String toString() {
+        return
+                "identificador=" + identificador +
+                ", origem=" + origem +
+                ", destino=" + destino +
+                ", quantidadePessoas=" + quantidadePessoas +
+                ", custo=" + custo +
+                ", distancia=" + distancia +
+                ", estado='" + estado;
+    }
 }

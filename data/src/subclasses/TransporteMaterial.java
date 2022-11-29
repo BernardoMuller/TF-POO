@@ -79,4 +79,18 @@ public class TransporteMaterial extends Transporte {
         custo = cargasP * pDistanciaa;
         return custo;
     }
+
+    @Override
+    public String toString() {
+        return
+                "identificador=" + identificador +
+                ", origem=" + origem +
+                ", destino=" + destino +
+                ", quantidadePessoas=" + quantidadePessoas +
+                ", custo=" + custo +
+                ", distancia=" + distancia +
+                ", carga=" + carga +
+                ", descricaoMaterial='" + descricaoMaterial + '\'' +
+                ", estado='" + estado;
+    }
 }

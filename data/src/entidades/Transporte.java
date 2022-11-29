@@ -58,4 +58,15 @@ public abstract class Transporte {
 	public static EspacoPorto getTerra() {
 		return terra;
 	}
+
+	@Override
+	public String toString() {
+		return "identificador=" + identificador +
+				", origem=" + origem +
+				", destino=" + destino +
+				", espaconave=" + espaconave +
+				", custo=" + custo +
+				", nave=" + nave +
+				", estado='" + estado;
+	}
 }
