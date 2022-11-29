@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 
 public class ConjuntoPortos {
+
     private static LinkedList<EspacoPorto> portos = new LinkedList<>();
 
     public ConjuntoPortos(){}
@@ -44,6 +45,9 @@ public class ConjuntoPortos {
             System.out.println("Erro encontrado: " + e);
         }
 
+    }
+    public static LinkedList<EspacoPorto> getPortos() {
+        return portos;
     }
 
 
