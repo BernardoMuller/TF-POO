@@ -8,6 +8,9 @@ import src.subclasses.TransportePessoas;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -133,6 +136,18 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
         }
         tp.setEspaconave(espaconave);
 
+    }
+
+    public void salvarDadosTransportes(String nomeArquivo){
+        nomeArquivo = nomeArquivo+".csv";
+        Path path = Paths.get(nomeArquivo);
+        try(PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()));){
+            pw.println("tipo;identificador;origem;destino;quantidade_carga;descricao");
+            for (Transporte transporte : todosTransportes){
+                pw.println(transporte.geraResumo());
+            }
+        }
+        catch(Exception e){System.out.println("Erro encontrado: " + e);}
     }
 
 
