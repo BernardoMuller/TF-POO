@@ -1,6 +1,6 @@
 package src;
 
-public class TransportePessoas extends Transporte {
+public class TransporteMaterial extends Transporte {
     private int identificador;
 
     private EspacoPorto origem;
@@ -13,25 +13,31 @@ public class TransportePessoas extends Transporte {
 
     private double distancia;
 
+    private double carga;
+
+    private String descricaoMaterial;
+
     private String estado;
 
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public TransportePessoas(int identificador, EspacoPorto origem, EspacoPorto destino, int quantidadePessoas){
+    public TransporteMaterial(int identificador, EspacoPorto origem, EspacoPorto destino, int carga, String descricaoMaterial){
         super(identificador, origem, destino);
-        this.quantidadePessoas = quantidadePessoas;
         estado = "Pendente";
+        this.carga=carga;
+        this.descricaoMaterial = descricaoMaterial;
         calculaDistancia();
         calculaCusto();
     }
 
-    public TransportePessoas(int identificador, EspacoPorto destino, int quantidadePessoas){
+    public TransporteMaterial(int identificador, EspacoPorto destino, int carga, String descricaoMaterial){
         super(identificador, destino);
         origem = Transporte.getTerra();
-        this.quantidadePessoas = quantidadePessoas;
         estado = "Pendente";
+        this.carga=carga;
+        this.descricaoMaterial = descricaoMaterial;
         calculaDistancia();
         calculaCusto();
     }
@@ -47,7 +53,7 @@ public class TransportePessoas extends Transporte {
 
     @Override
     public double calculaCusto() {
-        double pessoas = quantidadePessoas *100;
+        double cargasP = carga *500;
         double pDistanciaa = 0;
         if(distancia<0.5){
             pDistanciaa = 1000000 * distancia;
@@ -56,7 +62,7 @@ public class TransportePessoas extends Transporte {
             pDistanciaa = 100* distancia;
         }
 
-        custo = pessoas * pDistanciaa;
+        custo = cargasP * pDistanciaa;
         return custo;
     }
 }
