@@ -28,7 +28,9 @@ public abstract class Transporte {
 		estado = "Pendente";
 	}
 
-
+	public int getIdentificador() {
+		return identificador;
+	}
 
 	public abstract double calculaDistancia();
 

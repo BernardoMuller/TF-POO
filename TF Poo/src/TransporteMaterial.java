@@ -42,6 +42,12 @@ public class TransporteMaterial extends Transporte {
         calculaCusto();
     }
 
+
+    @Override
+    public int getIdentificador() {
+        return identificador;
+    }
+
     @Override
     public double calculaDistancia() {
         double x= Math.pow((destino.getCoordX() - origem.getCoordX()),2);

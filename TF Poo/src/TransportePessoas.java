@@ -46,6 +46,11 @@ public class TransportePessoas extends Transporte {
     }
 
     @Override
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    @Override
     public double calculaCusto() {
         double pessoas = quantidadePessoas *100;
         double pDistanciaa = 0;
