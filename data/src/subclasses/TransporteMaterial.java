@@ -83,7 +83,8 @@ public class TransporteMaterial extends Transporte {
     @Override
     public String toString() {
         return
-                "identificador=" + identificador +
+                "Transporte de Materiais:" +
+                        " identificador=" + identificador +
                 ", origem=" + origem +
                 ", destino=" + destino +
                 ", quantidadePessoas=" + quantidadePessoas +
