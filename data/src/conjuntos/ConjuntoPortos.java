@@ -4,17 +4,19 @@ import src.entidades.EspacoPorto;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.lang.reflect.Array;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class ConjuntoPortos {
+    private ArrayList<EspacoPorto> portos;
 
-    private static LinkedList<EspacoPorto> portos = new LinkedList<>();
+    public ConjuntoPortos(){
+        portos = new ArrayList<>();
+    }
 
-    public ConjuntoPortos(){}
-
-    public static void cadastraEspacoPorto(EspacoPorto porto){
+    public boolean cadastraEspacoPorto(EspacoPorto porto){
         int countRepetido = 0;
         if(portos.size()==0){portos.add(porto);}
         else{
@@ -23,10 +25,11 @@ public class ConjuntoPortos {
                     countRepetido++;
                 }
             }
-            if(countRepetido==0){ portos.add(porto);}
+            if(countRepetido==0){ portos.add(porto); return true;}
         }
+        return false;
     }
-    public static void leArquivoPorto(String paths){
+    public void leArquivoPorto(String paths){
         Path path = Paths.get(paths);
         try(BufferedReader br = new BufferedReader(new FileReader(String.valueOf(path)))){
             String fileContent;
@@ -40,7 +43,7 @@ public class ConjuntoPortos {
                 double coordY = Double.parseDouble(fcParts[3]);
                 double coordZ = Double.parseDouble(fcParts[4]);
                 EspacoPorto separator = new EspacoPorto(idPorto,nomePorto,coordX,coordY,coordZ);
-                portos.add(separator);
+               cadastraEspacoPorto(separator);
             }
             System.out.println("Leitura realizada com sucesso!");
         }catch(Exception e){
@@ -48,7 +51,7 @@ public class ConjuntoPortos {
         }
 
     }
-    public static LinkedList<EspacoPorto> getPortos() {
+    public ArrayList<EspacoPorto> getPortos() {
         return portos;
     }
 

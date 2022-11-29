@@ -11,6 +11,8 @@ public abstract class Transporte {
 
 	private EspacoPorto destino;
 
+	private Espaconave espaconave;
+
 	private double custo;
 
 	private Espaconave nave;
@@ -31,6 +33,10 @@ public abstract class Transporte {
 		this.origem = terra;
 		this.destino = destino;
 		estado = "Pendente";
+	}
+
+	public void setEspaconave(Espaconave espaconave) {
+		this.espaconave = espaconave;
 	}
 
 	public int getIdentificador() {
