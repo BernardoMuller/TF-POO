@@ -1,6 +1,6 @@
 package src;
 
-public class Espaconave {
+public class  Espaconave {
 
 	private String nome;
 
