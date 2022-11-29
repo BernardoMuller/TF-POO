@@ -39,4 +39,18 @@ public class EspacoPorto {
 	public double getCoordZ() {
 		return coordZ;
 	}
+
+	@Override
+	public String toString() {
+		return "EspacoPorto: " +
+				"numero=" + numero +
+				", nome='" + nome + '\'' +
+				", coordX=" + coordX +
+				", coordY=" + coordY +
+				", coordZ=" + coordZ;
+	}
+
+	public String geraResumo() {
+		return numero+";"+nome+";"+coordX+";"+coordY+";"+coordZ;
+	}
 }

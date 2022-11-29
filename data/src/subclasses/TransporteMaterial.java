@@ -10,8 +10,6 @@ public class TransporteMaterial extends Transporte {
 
     private EspacoPorto destino;
 
-    private int quantidadePessoas;
-
     private double custo;
 
     private double distancia;
@@ -87,11 +85,15 @@ public class TransporteMaterial extends Transporte {
                         " identificador=" + identificador +
                 ", origem=" + origem +
                 ", destino=" + destino +
-                ", quantidadePessoas=" + quantidadePessoas +
                 ", custo=" + custo +
                 ", distancia=" + distancia +
                 ", carga=" + carga +
                 ", descricaoMaterial='" + descricaoMaterial + '\'' +
                 ", estado='" + estado;
+    }
+
+    @Override
+    public String geraResumo() {
+        return "2;"+identificador+";"+origem.getNumero()+";"+destino.getNumero()+";"+carga+";"+descricaoMaterial;
     }
 }

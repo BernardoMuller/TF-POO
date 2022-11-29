@@ -69,4 +69,6 @@ public abstract class Transporte {
 				", nave=" + nave +
 				", estado='" + estado;
 	}
+
+	public abstract String geraResumo();
 }

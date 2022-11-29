@@ -84,4 +84,9 @@ public class TransportePessoas extends Transporte {
                 ", distancia=" + distancia +
                 ", estado='" + estado;
     }
+
+    @Override
+    public String geraResumo() {
+        return "2;"+identificador+";"+origem.getNumero()+";"+destino.getNumero()+";"+quantidadePessoas;
+    }
 }
