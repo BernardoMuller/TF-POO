@@ -75,8 +75,8 @@ public class TransportePessoas extends Transporte {
 
     @Override
     public String toString() {
-        return
-                "identificador=" + identificador +
+        return "Transporte de Pessoas:" +
+                " identificador=" + identificador +
                 ", origem=" + origem +
                 ", destino=" + destino +
                 ", quantidadePessoas=" + quantidadePessoas +
