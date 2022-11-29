@@ -1,10 +1,14 @@
 package src.conjuntos;
 
 import src.entidades.EspacoPorto;
+import src.entidades.Transporte;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.lang.reflect.Array;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -64,4 +68,15 @@ public class ConjuntoPortos {
      return null;
     }
 
+    public void salvarDadosPortos(String nomeArquivo){
+        nomeArquivo = nomeArquivo+".csv";
+        Path path = Paths.get(nomeArquivo);
+        try(PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()));){
+            pw.println("numero;nome;x;y;z");
+            for (EspacoPorto porto : portos){
+                pw.println(porto.geraResumo());
+            }
+        }
+        catch(Exception e){System.out.println("Erro encontrado: " + e);}
+    }
 }
