@@ -49,6 +49,11 @@ public class TransporteMaterial extends Transporte {
     }
 
     @Override
+    public String getEstado() {
+        return estado;
+    }
+
+    @Override
     public double calculaDistancia() {
         double x= Math.pow((destino.getCoordX() - origem.getCoordX()),2);
         double y= Math.pow((destino.getCoordY() - origem.getCoordY()),2);

@@ -32,6 +32,14 @@ public abstract class Transporte {
 		return identificador;
 	}
 
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	public abstract double calculaDistancia();
 
 	public abstract double calculaCusto();

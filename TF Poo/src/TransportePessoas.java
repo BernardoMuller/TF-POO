@@ -51,6 +51,13 @@ public class TransportePessoas extends Transporte {
     }
 
     @Override
+    public String getEstado() {
+        return estado;
+    }
+
+
+
+    @Override
     public double calculaCusto() {
         double pessoas = quantidadePessoas *100;
         double pDistanciaa = 0;

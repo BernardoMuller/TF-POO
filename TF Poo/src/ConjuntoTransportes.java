@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class ConjuntoTransportes {
 private static LinkedList<Transporte> transportes = new LinkedList<>();
@@ -80,6 +82,38 @@ private static LinkedList<Transporte> transportes = new LinkedList<>();
 
     }
 
+    public static void alteraEstadoTransporte(int id){
+        String status = "";
+        Scanner in = new Scanner(System.in);
+        Transporte transp = null;
+        for(Transporte transporte : transportes){
+            if(transporte.getIdentificador()==id){transp=transporte;}
+        }
+        if(transp.getEstado().equalsIgnoreCase("Cancelado") || transp.getEstado().equalsIgnoreCase("Finalizado")){System.out.println("O estado deste transporte não pode ser alterado"); return;}
+
+        System.out.println("Escolha qual estado deseja colocar");
+        int escolha = 0;
+        try{
+            while(escolha<1 || escolha>4){
+                System.out.println("1-Pendente\n2-Transportando\n3-Cancelado\n4-Finalizado");
+                escolha = in.nextInt();
+            }
+
+            switch(escolha){
+                case 1: status = "Pendente";break;
+                case 2: status = "Transportando";break;
+                case 3: status = "Cancelado";break;
+                case 4: status = "Finalizado";break;
+                default: break;
+            }
+
+
+
+        }catch(InputMismatchException e){System.out.println("Insira um numero valido"); escolha = 0;}
+
+        transp.setEstado(status);
+
+    }
 
 
 }
