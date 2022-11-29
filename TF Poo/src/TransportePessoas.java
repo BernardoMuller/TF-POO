@@ -55,8 +55,6 @@ public class TransportePessoas extends Transporte {
         return estado;
     }
 
-
-
     @Override
     public double calculaCusto() {
         double pessoas = quantidadePessoas *100;

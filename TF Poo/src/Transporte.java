@@ -10,6 +10,8 @@ public abstract class Transporte {
 
 	private double custo;
 
+	private Espaconave nave;
+
 	private String estado;
 
 	private static EspacoPorto terra = new EspacoPorto(1, "Terra", 0,0,0);
