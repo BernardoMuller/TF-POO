@@ -52,4 +52,14 @@ public class FTL extends Espaconave {
     public void setCargaMax(int cargaMax) {
         this.cargaMax = cargaMax;
     }
+
+    @Override
+    public String toString() {
+        return "FTL{" +
+                "tipo=" + tipo +
+                ", localAtual=" + localAtual +
+                ", velocidadeMax=" + velocidadeMax +
+                ", cargaMax=" + cargaMax +
+                '}';
+    }
 }

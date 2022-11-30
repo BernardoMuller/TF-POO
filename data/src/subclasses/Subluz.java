@@ -53,4 +53,14 @@ public class Subluz extends Espaconave {
     public void setVelocidade(double velocidade) {
         this.velocidade = velocidade;
     }
+
+    @Override
+    public String toString() {
+        return "Subluz{" +
+                "tipo=" + tipo +
+                ", localAtual=" + localAtual +
+                ", velocidade=" + velocidade +
+                ", combustivel='" + combustivel + '\'' +
+                '}';
+    }
 }

@@ -43,21 +43,24 @@ public class FormDadosIniciais {
                 textArea1.setText("");
                 switch (tipo){
                     case "espacoporto":
-                        conjuntoPortos.leArquivoPorto(nomeArquivoTextField.getText());
+                        String nomearquivo= nomeArquivoTextField.getText()+".dat";
+                        conjuntoPortos.leArquivoPorto(nomearquivo);
                         for (EspacoPorto ep:
                              listaEspacoporto) {
                             textArea1.append(ep + "\n\n");
                         }
                         break;
                     case "espaconave":
-                        conjuntoEspaconaves.leArquivo(nomeArquivoTextField.getText());
+                        String nomearquivo2= nomeArquivoTextField.getText()+".dat";
+                        conjuntoEspaconaves.leArquivo(nomearquivo2);
                         for (Espaconave es:
                                 listaEspaconave) {
                             textArea1.append(es + "\n\n");
                         }
                     break;
                     case "transporte":
-                        conjuntoTransportes.leArquivoTransporte(nomeArquivoTextField.getText());
+                        String nomearquivo3= nomeArquivoTextField.getText()+".dat";
+                        conjuntoTransportes.leArquivoTransporte(nomearquivo3);
                         for (Transporte t:
                                 listaTransporte) {
                             textArea1.append(t + "\n\n");

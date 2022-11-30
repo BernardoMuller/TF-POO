@@ -59,6 +59,26 @@ public abstract class Transporte {
 		return terra;
 	}
 
+	public EspacoPorto getOrigem() {
+		return origem;
+	}
+
+	public EspacoPorto getDestino() {
+		return destino;
+	}
+
+	public Espaconave getEspaconave() {
+		return espaconave;
+	}
+
+	public double getCusto() {
+		return custo;
+	}
+
+	public Espaconave getNave() {
+		return nave;
+	}
+
 	@Override
 	public String toString() {
 		return "identificador=" + identificador +

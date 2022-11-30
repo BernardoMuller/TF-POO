@@ -33,11 +33,12 @@ private ConjuntoTransportes conjuntoTransportes=new ConjuntoTransportes();
     public GUI() {
         super();
         setPreferredSize(new Dimension(800,800));
+        conjuntoTransportes.setConj(conjuntoPortos);
         formPrincipal=new FormPrincipal(this);
         formCadEP=new FormCadEP(this,conjuntoPortos);
         formCadEN=new FormCadEN(this);
         formCadTrans=new FormCadTrans(this);
-        altEstadoTrans=new AltEstadoTrans(this);
+        altEstadoTrans=new AltEstadoTrans(this,conjuntoTransportes);
         formDadosIniciais=new FormDadosIniciais(this,conjuntoPortos,conjuntoEspaconaves,conjuntoTransportes);
         formDesigTrans=new FormDesigTrans(this);
         formSalvarDados=new FormSalvarDados(this);
@@ -82,6 +83,7 @@ private ConjuntoTransportes conjuntoTransportes=new ConjuntoTransportes();
                 this.setSize(800,800);
                 break;
             case(6):
+
                 setContentPane(formDadosIniciais.getPanel());
                 this.pack();
                 this.setSize(800,800);

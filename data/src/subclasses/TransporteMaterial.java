@@ -56,9 +56,9 @@ public class TransporteMaterial extends Transporte {
 
     @Override
     public double calculaDistancia() {
-        double x= Math.pow((origem.getCoordX() - destino.getCoordX()),2);
-        double y= Math.pow((origem.getCoordY() - destino.getCoordY()),2);
-        double z= Math.pow((origem.getCoordZ()-destino.getCoordZ()),2);
+        double x= Math.pow((super.getOrigem().getCoordX() - super.getDestino().getCoordX()),2);
+        double y= Math.pow((super.getOrigem().getCoordY() - super.getDestino().getCoordY()),2);
+        double z= Math.pow((super.getOrigem().getCoordZ()-super.getDestino().getCoordZ()),2);
         distancia = Math.sqrt(x+y+z);
         return distancia;
     }
@@ -82,9 +82,9 @@ public class TransporteMaterial extends Transporte {
     public String toString() {
         return
                 "Transporte de Materiais:" +
-                        " identificador=" + identificador +
-                ", origem=" + origem +
-                ", destino=" + destino +
+                        " identificador=" + super.getIdentificador() +
+                ", origem=" +  super.getOrigem() +
+                ", destino=" + super.getDestino() +
                 ", custo=" + custo +
                 ", distancia=" + distancia +
                 ", carga=" + carga +

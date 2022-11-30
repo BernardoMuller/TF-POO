@@ -19,7 +19,13 @@ public class ConjuntoTransportes {
 private  ArrayList<Transporte> todosTransportes;
 private  Queue<Transporte> transportesPendentes;
 
-public ConjuntoTransportes(){
+private ConjuntoPortos conj;
+
+    public void setConj(ConjuntoPortos conj) {
+        this.conj = conj;
+    }
+
+    public ConjuntoTransportes(){
     transportesPendentes = new LinkedList<>();
     todosTransportes = new ArrayList<>();
 }
@@ -48,7 +54,7 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
                     int destino = Integer.parseInt(fcParts[3]);
                     int quantidadePessoas = Integer.parseInt(fcParts[4]);
 
-                    ConjuntoPortos conj = new ConjuntoPortos();
+
                     ArrayList<EspacoPorto> list = conj.getPortos();
                     EspacoPorto origem1 = null;
                     EspacoPorto destino1 = null;
@@ -150,6 +156,12 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
         catch(Exception e){System.out.println("Erro encontrado: " + e);}
     }
 
+    public Transporte pesquisaID(int id){
+        for(Transporte t: todosTransportes){
+            if(t.getIdentificador()==id)return t;
+        }
+        return null;
+    }
     public ArrayList<Transporte> getTodosTransportes() {
         return todosTransportes;
     }

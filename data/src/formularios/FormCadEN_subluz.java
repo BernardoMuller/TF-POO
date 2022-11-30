@@ -47,16 +47,21 @@ public class FormCadEN_subluz {
                     break;
                     case(2): sCombustivel="ion";
                     break;
+                    default: sCombustivel="nada";
+                    break;
                 }
                     if (espacoPorto==null){mensagemFinal.setText("Não há espaço-porto com esse id");
                     throw new Exception();}
                     if (sCombustivel.equals("nada")){mensagemFinal.setText("Digite 1 ou 2 no combustivel");
                     throw new Exception();}
                 Subluz subluz=new Subluz(nome, espacoPorto, velocidade,sCombustivel);
-                conjuntoEspaconaves.cadastraNave(subluz);
-
+                    if(!conjuntoEspaconaves.cadastraNave(subluz)){
+                        mensagemFinal.setText("nome repetido");
+                        throw new Exception();
+                    };
+                mensagemFinal.setText("concluido");
                 }catch (IllegalArgumentException ex){mensagemFinal.setText(ex.getMessage());}
-                catch (Exception ex){mensagemFinal.setText("erro"+ex);}
+                catch (Exception ex){}
             }
         });
     }

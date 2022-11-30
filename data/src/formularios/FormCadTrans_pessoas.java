@@ -58,9 +58,12 @@ public class FormCadTrans_pessoas {
 
                     TransportePessoas transportePessoas=new TransportePessoas(id,espacoPortoO,espacoPortoD,qtdPessoas);
 
-                    if(!conjuntoTransportes.cadastraEspacoTransporte(transportePessoas)) throw new IllegalArgumentException("id de transporte repetido");
-
-                }catch (IllegalArgumentException ex){mensagemFinal.setText("erro"+ex.getMessage());}
+                    if(!conjuntoTransportes.cadastraEspacoTransporte(transportePessoas)){
+                        mensagemFinal.setText("id de transporte repetido");
+                        throw new IllegalArgumentException();
+                    }
+                    mensagemFinal.setText("concluido");
+                }catch (Exception ex){}
             }
 
         });
