@@ -24,7 +24,7 @@ public class FormCadTrans_pessoas {
 
     public FormCadTrans_pessoas(GUI gui, ConjuntoPortos conjuntoPortos, ConjuntoTransportes conjuntoTransportes) {
         this.gui = gui;
-        epOTextField.setText("");
+        epOTextField.setText("11");
 
         voltarButton.addActionListener(new ActionListener() {
             @Override
@@ -36,9 +36,11 @@ public class FormCadTrans_pessoas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
+                    EspacoPorto espacoPortoO;
+
                     int id=Integer.parseInt(idTextField.getText());
 
-                    EspacoPorto espacoPortoO;
+
                     int idEPO = Integer.parseInt(epOTextField.getText());
                     espacoPortoO = conjuntoPortos.pesquisaPorID(idEPO);
 

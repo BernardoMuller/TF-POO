@@ -24,7 +24,7 @@ public class FormCadTrans_materiais {
 
     public FormCadTrans_materiais(GUI gui, ConjuntoPortos conjuntoPortos, ConjuntoTransportes conjuntoTransportes) {
         this.gui = gui;
-        epOTextField.setText("");
+        epOTextField.setText("11");
         voltaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,10 +39,10 @@ public class FormCadTrans_materiais {
 
             EspacoPorto espacoPortoO;
 
-                    if(!epOTextField.getText().equals("")) {
+
                         int idEPO = Integer.parseInt(epOTextField.getText());
                         espacoPortoO = conjuntoPortos.pesquisaPorID(idEPO);
-                    }else espacoPortoO=conjuntoPortos.pesquisaPorID(11);
+
 
 
             EspacoPorto espacoPortoD= conjuntoPortos.pesquisaPorID(Integer.parseInt(epDTextField.getText()));

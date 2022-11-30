@@ -66,6 +66,8 @@ public class ConjuntoEspaconaves {
         }
         catch (IOException e) {
             return false;
+        }catch (Exception esd) {
+            System.out.println(esd);
         }
         return true;
     }

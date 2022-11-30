@@ -54,6 +54,11 @@ public class FTL extends Espaconave {
     }
 
     @Override
+    public String geraResumo(){
+        return "2"+";"+getNome()+";"+getLocalAtual().getNumero()+";"+getVelocidadeMax()+";"+getCargaMax();
+    }
+
+    @Override
     public String toString() {
         return "FTL{" +
                 "tipo=" + tipo +

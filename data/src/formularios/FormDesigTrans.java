@@ -23,16 +23,17 @@ public class FormDesigTrans {
         designarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Queue<Espaconave> esDisp=conjuntoEspaconaves.getEspaconavesDisponiveis();
-                Queue<Transporte> filaTrans=conjuntoTransportes.getTransportesPendentes();
-                while (!filaTrans.isEmpty()||!esDisp.isEmpty()){
-                    Transporte t=filaTrans.remove();
-                    Espaconave es=esDisp.remove();
-                    t.setNave(es);
-                    t.setEstado("transportando");
-                    textArea1.append(t+"\n\n");
-                }
-            }
+                try {
+                    Queue<Espaconave> esDisp = conjuntoEspaconaves.getEspaconavesDisponiveis();
+                    Queue<Transporte> filaTrans = conjuntoTransportes.getTransportesPendentes();
+                    while (!filaTrans.isEmpty() || !esDisp.isEmpty()) {
+                        Transporte t = filaTrans.remove();
+                        Espaconave es = esDisp.remove();
+                        t.setNave(es);
+                        t.setEstado("transportando");
+                        textArea1.append(t + "\n\n");
+                    }
+                }catch(Exception erc){System.out.println(erc);}}
         });
         voltarButton.addActionListener(new ActionListener() {
             @Override

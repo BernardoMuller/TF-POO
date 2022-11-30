@@ -13,4 +13,10 @@ public class  Espaconave {
 	public String getNome() {
 		return nome;
 	}
+
+	public String geraResumo(){
+		return null;
+	}
+
+
 }

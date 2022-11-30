@@ -100,6 +100,6 @@ public class TransportePessoas extends Transporte {
 
     @Override
     public String geraResumo() {
-        return "2;"+identificador+";"+origem.getNumero()+";"+destino.getNumero()+";"+quantidadePessoas;
+        return "1;"+identificador+";"+super.getOrigem().getNumero()+";"+super.getDestino().getNumero()+";"+quantidadePessoas;
     }
 }

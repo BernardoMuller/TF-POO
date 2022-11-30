@@ -101,6 +101,6 @@ public class TransporteMaterial extends Transporte {
 
     @Override
     public String geraResumo() {
-        return "2;"+identificador+";"+origem.getNumero()+";"+destino.getNumero()+";"+carga+";"+descricaoMaterial + ";"+getNave();
+        return "2;"+identificador+";"+super.getOrigem().getNumero()+";"+super.getDestino().getNumero()+";"+carga+";"+descricaoMaterial + ";"+getNave();
     }
 }

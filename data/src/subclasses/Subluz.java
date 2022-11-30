@@ -63,4 +63,10 @@ public class Subluz extends Espaconave {
                 ", combustivel='" + combustivel + '\'' +
                 '}';
     }
+
+    @Override
+    public String geraResumo(){
+        return "1"+";"+getNome()+";"+getLocalAtual().getNumero()+";"+getVelocidade()+";"+getCombustivel();
+    }
+
 }
