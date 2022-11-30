@@ -55,6 +55,7 @@ public class FormDadosIniciais {
                         conjuntoEspaconaves.leArquivo(nomearquivo2);
                         for (Espaconave es:
                                 listaEspaconave) {
+                            conjuntoEspaconaves.adicionaESDisp(es);
                             textArea1.append(es + "\n\n");
                         }
                     break;

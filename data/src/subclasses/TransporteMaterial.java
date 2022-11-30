@@ -46,7 +46,7 @@ public class TransporteMaterial extends Transporte {
 
     @Override
     public int getIdentificador() {
-        return identificador;
+        return super.getIdentificador();
     }
 
     @Override
@@ -89,7 +89,8 @@ public class TransporteMaterial extends Transporte {
                 ", distancia=" + distancia +
                 ", carga=" + carga +
                 ", descricaoMaterial='" + descricaoMaterial + '\'' +
-                ", estado='" + estado;
+                ", estado='" + estado +
+                        ", espaçonave='" + super.getEspaconave();
     }
 
     @Override

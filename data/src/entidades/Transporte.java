@@ -79,6 +79,10 @@ public abstract class Transporte {
 		return nave;
 	}
 
+	public void setNave(Espaconave nave) {
+		this.nave = nave;
+	}
+
 	@Override
 	public String toString() {
 		return "identificador=" + identificador +

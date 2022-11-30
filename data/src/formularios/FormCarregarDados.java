@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class FormCarregarDados {
     GUI gui;
     private JButton voltarButton;
-    private JTextField textField1;
+    private JTextField nomeArquivo;
     private JPanel panel;
     private JButton carregarButton;
 

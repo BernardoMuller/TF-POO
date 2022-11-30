@@ -74,7 +74,6 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
                         int destino = Integer.parseInt(fcParts[3]);
                         double quantidadeCarga = Double.parseDouble(fcParts[4]);
                         String desc = fcParts[5];
-                    ConjuntoPortos conj = new ConjuntoPortos();
                     ArrayList<EspacoPorto> list = conj.getPortos();
                     EspacoPorto origem1 = null;
                     EspacoPorto destino1 = null;
@@ -158,6 +157,7 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
 
     public Transporte pesquisaID(int id){
         for(Transporte t: todosTransportes){
+
             if(t.getIdentificador()==id)return t;
         }
         return null;

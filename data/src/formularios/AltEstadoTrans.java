@@ -7,6 +7,7 @@ import src.entidades.Transporte;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class AltEstadoTrans {
     GUI gui;
@@ -17,6 +18,7 @@ public class AltEstadoTrans {
     private JButton alterarButton;
     private JLabel mensagemFinal;
     private JPanel panel;
+    private JTextArea textArea1;
 
     public AltEstadoTrans(GUI gui, ConjuntoTransportes conjuntoTransportes) {
         this.gui=gui;
@@ -30,14 +32,17 @@ public class AltEstadoTrans {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int id=Integer.parseInt(textField1.getText());
+
                 Transporte t=conjuntoTransportes.pesquisaID(id);
-                textField1.setText(t+"");
+
+               textArea1.setText(t+"");
             }
         });
         alterarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int id=Integer.parseInt(textField1.getText());
+
                 Transporte t=conjuntoTransportes.pesquisaID(id);
                 String estado=t.getEstado();
                 if(estado.equalsIgnoreCase("cancelado"))mensagemFinal.setText("nao é possivel alterar o estado");
@@ -58,6 +63,8 @@ public class AltEstadoTrans {
                         break;
                     }
                     }
+                textArea1.setText(t+"");
+
             }
         });
     }

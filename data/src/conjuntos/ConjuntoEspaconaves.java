@@ -8,13 +8,12 @@ import src.subclasses.Subluz;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class ConjuntoEspaconaves {
 
     private ArrayList<Espaconave> garagem;
+    private Queue<Espaconave> espaconavesDisponiveis=new LinkedList<>();
 
     private ConjuntoPortos cj;
 
@@ -69,6 +68,13 @@ public class ConjuntoEspaconaves {
             return false;
         }
         return true;
+    }
+    public void adicionaESDisp(Espaconave es){
+        espaconavesDisponiveis.add(es);
+    }
+
+    public Queue<Espaconave> getEspaconavesDisponiveis() {
+        return espaconavesDisponiveis;
     }
 
     public ArrayList<Espaconave> getGaragem() {

@@ -50,7 +50,7 @@ public class TransportePessoas extends Transporte {
 
     @Override
     public int getIdentificador() {
-        return identificador;
+        return super.getIdentificador();
     }
 
     @Override
@@ -82,7 +82,8 @@ public class TransportePessoas extends Transporte {
                 ", quantidadePessoas=" + quantidadePessoas +
                 ", custo=" + custo +
                 ", distancia=" + distancia +
-                ", estado='" + estado;
+                ", estado='" + estado +
+                ", espaçonave='" + super.getEspaconave();
     }
 
     @Override
