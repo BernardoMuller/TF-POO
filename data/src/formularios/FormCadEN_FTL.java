@@ -42,6 +42,7 @@ public class FormCadEN_FTL {
                         throw new Exception();}
                     FTL ftl = new FTL(nome, espacoPorto, velocidadeMax, cargaMax);
                     if(!conjuntoEspaconaves.cadastraNave(ftl))throw new RuntimeException("nome repetido");
+                    conjuntoEspaconaves.adicionaESDisp(ftl);
                     mensagemFinal.setText("cadastro concluido");
                 }catch (RuntimeException ex){mensagemFinal.setText(ex.getMessage());}
                 catch(Exception ex){mensagemFinal.setText("erro"+ex);}

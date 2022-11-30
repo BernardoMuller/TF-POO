@@ -1,7 +1,6 @@
 package src.entidades;
 
 import src.entidades.EspacoPorto;
-import src.entidades.Espaconave;
 
 public abstract class Transporte {
 

@@ -59,6 +59,7 @@ public class FormCadEN_subluz {
                         mensagemFinal.setText("nome repetido");
                         throw new Exception();
                     };
+                    conjuntoEspaconaves.adicionaESDisp(subluz);
                 mensagemFinal.setText("concluido");
                 }catch (IllegalArgumentException ex){mensagemFinal.setText(ex.getMessage());}
                 catch (Exception ex){}

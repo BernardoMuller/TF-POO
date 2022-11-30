@@ -14,17 +14,6 @@ public class ACMESpace {
  private static ConjuntoEspaconaves conjuntoEspaconaves = new ConjuntoEspaconaves();
 
 
- public static boolean carregaDadosIniciais(){
-     try{
-        conjuntoPortos.leArquivoPorto("TESTE-espacoportos.dat");
-        conjuntoTransportes.leArquivoTransporte("TESTE-transportes.dat");
-        conjuntoEspaconaves.leArquivo("TESTE-espaconaves.dat");
-        return true;
-     }catch(Exception e){System.out.println(e); return false;}
-
- }
-
-
 
 
 

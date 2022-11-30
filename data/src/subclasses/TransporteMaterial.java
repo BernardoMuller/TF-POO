@@ -1,8 +1,6 @@
 package src.subclasses;
 
-import src.entidades.EspacoPorto;
-import src.entidades.Espaconave;
-import src.entidades.Transporte;
+import src.entidades.*;
 
 public class TransporteMaterial extends Transporte {
     private int identificador;
@@ -103,6 +101,6 @@ public class TransporteMaterial extends Transporte {
 
     @Override
     public String geraResumo() {
-        return "2;"+identificador+";"+origem.getNumero()+";"+destino.getNumero()+";"+carga+";"+descricaoMaterial;
+        return "2;"+identificador+";"+origem.getNumero()+";"+destino.getNumero()+";"+carga+";"+descricaoMaterial + ";"+getNave();
     }
 }
