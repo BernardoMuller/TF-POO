@@ -65,7 +65,9 @@ public class FormCadTrans_pessoas {
                         throw new IllegalArgumentException();
                     }
                     mensagemFinal.setText("concluido");
-                }catch (Exception ex){}
+                }catch (Exception ex){
+                    mensagemFinal.setText("erro " + ex);
+                }
             }
 
         });

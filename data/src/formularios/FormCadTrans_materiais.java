@@ -60,6 +60,7 @@ public class FormCadTrans_materiais {
                 if(!conjuntoTransportes.cadastraEspacoTransporte(transporteMaterial)) throw new IllegalArgumentException("id de transporte repetido");
 
             }catch (IllegalArgumentException ex){mensagemFinal.setText("erro"+ex.getMessage());}
+                catch(Exception esp){mensagemFinal.setText("erro " + esp);}
             }
         });
     }
