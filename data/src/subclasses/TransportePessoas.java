@@ -1,6 +1,7 @@
 package src.subclasses;
 
 import src.entidades.EspacoPorto;
+import src.entidades.Espaconave;
 import src.entidades.Transporte;
 
 public class TransportePessoas extends Transporte {
@@ -17,6 +18,8 @@ public class TransportePessoas extends Transporte {
     private double distancia;
 
     private String estado;
+
+    private Espaconave nave;
 
     public void setEstado(String estado) {
         this.estado = estado;
@@ -73,6 +76,15 @@ public class TransportePessoas extends Transporte {
         return custo;
     }
 
+    public void setNave(Espaconave nave) {
+        this.nave=nave;
+    }
+
+    @Override
+    public Espaconave getNave() {
+        return nave;
+    }
+
     @Override
     public String toString() {
         return "Transporte de Pessoas:" +
@@ -83,7 +95,7 @@ public class TransportePessoas extends Transporte {
                 ", custo=" + custo +
                 ", distancia=" + distancia +
                 ", estado='" + estado +
-                ", espaçonave='" + super.getEspaconave();
+                ", espaçonave='" + getNave();
     }
 
     @Override

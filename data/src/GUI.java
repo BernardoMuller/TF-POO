@@ -34,6 +34,7 @@ private ConjuntoTransportes conjuntoTransportes=new ConjuntoTransportes();
         super();
         setPreferredSize(new Dimension(800,800));
         conjuntoTransportes.setConj(conjuntoPortos);
+        conjuntoEspaconaves.setCj(conjuntoPortos);
         formPrincipal=new FormPrincipal(this);
         formCadEP=new FormCadEP(this,conjuntoPortos);
         formCadEN=new FormCadEN(this);

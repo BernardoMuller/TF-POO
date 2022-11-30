@@ -12,6 +12,7 @@ public class FormSalvarDados {
     private JTextField textField1;
     private JLabel mensagemFinal;
     private JPanel panel;
+    private JButton salvarButton;
 
     public FormSalvarDados(GUI gui) {
         this.gui = gui;

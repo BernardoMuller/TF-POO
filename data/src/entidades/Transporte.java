@@ -26,6 +26,7 @@ public abstract class Transporte {
 		this.origem = origem;
 		this.destino = destino;
 		estado = "Pendente";
+
 	}
 
 	public Transporte(int identificador, EspacoPorto destino){

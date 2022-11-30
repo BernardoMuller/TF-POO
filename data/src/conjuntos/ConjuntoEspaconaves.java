@@ -19,7 +19,7 @@ public class ConjuntoEspaconaves {
 
     public ConjuntoEspaconaves() {
         garagem= new ArrayList<>();
-        cj= new ConjuntoPortos();
+
     }
 
     public boolean cadastraNave(Espaconave nave) {
@@ -71,6 +71,10 @@ public class ConjuntoEspaconaves {
     }
     public void adicionaESDisp(Espaconave es){
         espaconavesDisponiveis.add(es);
+    }
+
+    public void setCj(ConjuntoPortos cj) {
+        this.cj = cj;
     }
 
     public Queue<Espaconave> getEspaconavesDisponiveis() {

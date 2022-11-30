@@ -27,9 +27,7 @@ public class FormDesigTrans {
                 Queue<Transporte> filaTrans=conjuntoTransportes.getTransportesPendentes();
                 while (!filaTrans.isEmpty()||!esDisp.isEmpty()){
                     Transporte t=filaTrans.remove();
-                    System.out.println(t);
                     Espaconave es=esDisp.remove();
-                    System.out.println(es);
                     t.setNave(es);
                     t.setEstado("transportando");
                     textArea1.append(t+"\n\n");
