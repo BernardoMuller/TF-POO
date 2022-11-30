@@ -4,6 +4,10 @@ package src;
 
 import java.awt.*;
 import javax.swing.*;
+
+import src.conjuntos.ConjuntoEspaconaves;
+import src.conjuntos.ConjuntoPortos;
+import src.conjuntos.ConjuntoTransportes;
 import src.formularios.*;
 
 public class GUI extends JFrame {
@@ -22,23 +26,27 @@ private FormCadEN_subluz formCadEN_subluz;
 private FormCadTrans_pessoas formCadTrans_pessoas;
 private FormCadTrans_materiais formCadTrans_materiais;
 
+private ConjuntoPortos conjuntoPortos=new ConjuntoPortos();
+private ConjuntoEspaconaves conjuntoEspaconaves=new ConjuntoEspaconaves();
+private ConjuntoTransportes conjuntoTransportes=new ConjuntoTransportes();
+
     public GUI() {
         super();
         setPreferredSize(new Dimension(800,800));
         formPrincipal=new FormPrincipal(this);
-        formCadEP=new FormCadEP(this);
+        formCadEP=new FormCadEP(this,conjuntoPortos);
         formCadEN=new FormCadEN(this);
         formCadTrans=new FormCadTrans(this);
         altEstadoTrans=new AltEstadoTrans(this);
-        formDadosIniciais=new FormDadosIniciais(this);
+        formDadosIniciais=new FormDadosIniciais(this,conjuntoPortos,conjuntoEspaconaves,conjuntoTransportes);
         formDesigTrans=new FormDesigTrans(this);
         formSalvarDados=new FormSalvarDados(this);
-        formMostrarDados=new FormMostrarDados(this);
+        formMostrarDados=new FormMostrarDados(this,conjuntoTransportes);
         formCarregarDados=new FormCarregarDados(this);
-        formCadEN_ftl=new FormCadEN_FTL(this);
-        formCadEN_subluz=new FormCadEN_subluz(this);
-        formCadTrans_pessoas=new FormCadTrans_pessoas(this);
-        formCadTrans_materiais=new FormCadTrans_materiais(this);
+        formCadEN_ftl=new FormCadEN_FTL(this,conjuntoPortos,conjuntoEspaconaves);
+        formCadEN_subluz=new FormCadEN_subluz(this,conjuntoPortos,conjuntoEspaconaves);
+        formCadTrans_pessoas=new FormCadTrans_pessoas(this,conjuntoPortos,conjuntoTransportes);
+        formCadTrans_materiais=new FormCadTrans_materiais(this,conjuntoPortos,conjuntoTransportes);
         setContentPane(formPrincipal.getPanel());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);

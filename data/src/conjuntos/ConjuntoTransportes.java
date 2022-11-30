@@ -66,7 +66,7 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
                         int identificador = Integer.parseInt(fcParts[1]);
                         int origem = Integer.parseInt(fcParts[2]);
                         int destino = Integer.parseInt(fcParts[3]);
-                        int quantidadeCarga = Integer.parseInt(fcParts[4]);
+                        double quantidadeCarga = Double.parseDouble(fcParts[4]);
                         String desc = fcParts[5];
                     ConjuntoPortos conj = new ConjuntoPortos();
                     ArrayList<EspacoPorto> list = conj.getPortos();
@@ -150,5 +150,11 @@ public boolean cadastraEspacoTransporte(Transporte transporte){
         catch(Exception e){System.out.println("Erro encontrado: " + e);}
     }
 
+    public ArrayList<Transporte> getTodosTransportes() {
+        return todosTransportes;
+    }
 
+    public Queue<Transporte> getTransportesPendentes() {
+        return transportesPendentes;
+    }
 }

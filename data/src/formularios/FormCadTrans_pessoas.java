@@ -1,15 +1,69 @@
 package src.formularios;
 
 import src.GUI;
+import src.conjuntos.ConjuntoPortos;
+import src.conjuntos.ConjuntoTransportes;
+import src.entidades.EspacoPorto;
+import src.subclasses.TransporteMaterial;
+import src.subclasses.TransportePessoas;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FormCadTrans_pessoas {
     GUI gui;
     private JPanel panel;
+    private JButton voltarButton;
+    private JTextField idTextField;
+    private JTextField epOTextField;
+    private JTextField epDTextField;
+    private JTextField pessoasTextField;
+    private JButton cadastrarButton;
+    private JLabel mensagemFinal;
 
-    public FormCadTrans_pessoas(GUI gui) {
+    public FormCadTrans_pessoas(GUI gui, ConjuntoPortos conjuntoPortos, ConjuntoTransportes conjuntoTransportes) {
         this.gui = gui;
+        epOTextField.setText("");
+
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gui.setPanel(4);
+            }
+        });
+        cadastrarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    int id=Integer.parseInt(idTextField.getText());
+
+                    EspacoPorto espacoPortoO;
+                    int idEPO = Integer.parseInt(epOTextField.getText());
+                    espacoPortoO = conjuntoPortos.pesquisaPorID(idEPO);
+
+                    EspacoPorto espacoPortoD= conjuntoPortos.pesquisaPorID(Integer.parseInt(epDTextField.getText()));
+
+                    int qtdPessoas=Integer.parseInt(pessoasTextField.getText());
+
+                    System.out.println(id);
+                    System.out.println(espacoPortoO);
+                    System.out.println(espacoPortoD);
+                    System.out.println(qtdPessoas);
+
+                    if (espacoPortoO==null){mensagemFinal.setText("Não há espaço-porto com esse id (Espaço-porto origem)");
+                        throw new IllegalArgumentException();}
+                    if (espacoPortoD==null){mensagemFinal.setText("Não há espaço-porto com esse id (Espaço-porto destino)");
+                        throw new IllegalArgumentException();}
+
+                    TransportePessoas transportePessoas=new TransportePessoas(id,espacoPortoO,espacoPortoD,qtdPessoas);
+
+                    if(!conjuntoTransportes.cadastraEspacoTransporte(transportePessoas)) throw new IllegalArgumentException("id de transporte repetido");
+
+                }catch (IllegalArgumentException ex){mensagemFinal.setText("erro"+ex.getMessage());}
+            }
+
+        });
     }
 
     public JPanel getPanel() {

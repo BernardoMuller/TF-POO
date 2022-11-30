@@ -13,9 +13,9 @@ public class FTL extends Espaconave {
 
     private int cargaMax;
 
-    public FTL(int tipo, String nome, EspacoPorto ep, double velocidadeMax, int cargaMax) {
+    public FTL(String nome, EspacoPorto ep, double velocidadeMax, int cargaMax) {
         super(nome);
-        this.tipo = tipo;
+        this.tipo = 2;
         this.localAtual = ep;
         this.velocidadeMax = velocidadeMax;
         this.cargaMax = cargaMax;

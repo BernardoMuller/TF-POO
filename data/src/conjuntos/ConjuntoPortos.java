@@ -33,6 +33,19 @@ public class ConjuntoPortos {
         }
         return false;
     }
+    public boolean cadastraEspacoPorto2(EspacoPorto porto){
+        if(portos.isEmpty()){
+            portos.add(porto);
+        return true;}
+        else{
+            for (EspacoPorto ep:
+                 portos) {
+                if (ep.getNumero()== porto.getNumero())return false;
+            }
+            portos.add(porto);
+            return true;
+        }
+    }
     public void leArquivoPorto(String paths){
         Path path = Paths.get(paths);
         try(BufferedReader br = new BufferedReader(new FileReader(String.valueOf(path)))){

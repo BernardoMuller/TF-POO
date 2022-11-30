@@ -52,12 +52,12 @@ public class ConjuntoEspaconaves {
                 double v = Double.parseDouble(velocidade);
                 EspacoPorto ep = cj.pesquisaPorID(idEP);
                 if(id==1){
-                    Espaconave Sub = new Subluz(id , nome, ep, v, combustivel_limite);
+                    Espaconave Sub = new Subluz(nome, ep, v, combustivel_limite);
                     cadastraNave(Sub);}
 
                 if(id==2){
                     int limite = Integer.parseInt(combustivel_limite);
-                    Espaconave FT = new FTL(id, nome, ep, v, limite);
+                    Espaconave FT = new FTL(nome, ep, v, limite);
                     cadastraNave(FT);}
             }
 
@@ -71,8 +71,7 @@ public class ConjuntoEspaconaves {
         return true;
     }
 
-
-
-
-
+    public ArrayList<Espaconave> getGaragem() {
+        return garagem;
+    }
 }

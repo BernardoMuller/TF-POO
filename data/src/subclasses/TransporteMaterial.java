@@ -24,7 +24,7 @@ public class TransporteMaterial extends Transporte {
         this.estado = estado;
     }
 
-    public TransporteMaterial(int identificador, EspacoPorto origem, EspacoPorto destino, int carga, String descricaoMaterial){
+    public TransporteMaterial(int identificador, EspacoPorto origem, EspacoPorto destino, double carga, String descricaoMaterial){
         super(identificador, origem, destino);
         estado = "Pendente";
         this.carga=carga;

@@ -14,9 +14,9 @@ public class Subluz extends Espaconave {
     private String combustivel;
 
 
-    public Subluz(int tipo, String nome, EspacoPorto localAtual, double velocidade, String combustivel) {
+    public Subluz(String nome, EspacoPorto localAtual, double velocidade, String combustivel) {
         super(nome);
-        this.tipo = tipo;
+        this.tipo = 1;
         this.localAtual = localAtual;
         this.velocidade = velocidade;
         this.combustivel = combustivel;

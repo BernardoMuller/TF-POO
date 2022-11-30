@@ -2,6 +2,7 @@ package src.formularios;
 
 
 import src.GUI;
+import src.conjuntos.ConjuntoPortos;
 import src.entidades.EspacoPorto;
 
 import javax.swing.*;
@@ -24,7 +25,7 @@ public class FormCadEP {
     private JTextField coordYTextField;
     private JTextField coordZTextField;
 
-    public FormCadEP(GUI gui) {
+    public FormCadEP(GUI gui, ConjuntoPortos conjuntoPortos) {
         this.gui=gui;
 
         voltarButton.addActionListener(new ActionListener() {
@@ -45,6 +46,8 @@ public class FormCadEP {
 
                     EspacoPorto espacoPorto = new EspacoPorto(id, nome, coordX, coordY, coordZ);
 
+                    if(!conjuntoPortos.cadastraEspacoPorto2(espacoPorto)) throw new RuntimeException("id repetido");
+                    mensagemFinalLabel.setText("cadastro concluido");
                 }catch(Exception ex){mensagemFinalLabel.setText("erro"+ex);}
             }
         });
